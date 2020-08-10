@@ -23,6 +23,9 @@
                     <td><input type="password" name="password" value=""></td>
                 </tr>
                 <tr>
+                    <td><input type="checkBox" name="rememberMe">Remember Me</td>
+                </tr>
+                <tr>
                     <td><hr></td>
                 </tr>
                 <tr>
@@ -52,6 +55,10 @@
             echo "empty fields found";
         }
         else {
+            if (isset($_POST["rememberMe"])) {
+                $loggedInAs = $id;
+                setcookie("loginStatus", $id, time()+3600);
+            }
             $tableName = "userinfo";
             $query = "SELECT * FROM $tableName WHERE id='$id' AND password='$password'";
             

@@ -14,7 +14,7 @@
             ?>
         !</h1>
         <a href="profile.php">Profile</a><br>
-        <a href="forgotPassword.php">Change Passowrd</a><br>
+        <a href="changePassword.php">Change Passowrd</a><br>
         <a href="viewUsers.php">View Users</a><br>
         <a href="login.php">Logout</a><br>
     </center>

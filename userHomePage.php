@@ -1,3 +1,11 @@
+<?php
+    if (isset($_COOKIE["loginStatus"])) {
+        
+    }
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
