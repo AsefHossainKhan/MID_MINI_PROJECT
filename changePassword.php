@@ -10,8 +10,24 @@
         <legend>CHANGE PASSWORD</legend>
         <table>
             <tr>
-                <td></td>
+                <td>Current Password</td>
             </tr>
+            <tr>
+                <td><input type="password" name="currentPassword" value=""></td>
+            </tr>
+            <tr>
+                <td>New Password</td>
+            </tr>
+            <tr>
+                <td><input type="password" name="newPassword" value=""></td>
+            </tr>
+            <tr>
+                <td>Retype New Password</td>
+            </tr>
+            <tr>
+                <td><input type="password" name="retypeNewPassword" value=""></td>
+            </tr>
+            <tr></tr>
         </table>
     </fieldset>
 </body>
