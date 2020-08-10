@@ -1,6 +1,11 @@
 <?php
-    if (isset($_COOKIE["loginStatus"])) {
-        
+    session_start();
+
+    if(!isset($_SESSION["rememberMeChecked"])) {
+        $_SESSION["currentLink"] = "userHomePage.php";
+        $_SESSION["rememberMeChecked"] = true;
+        header("Location: rememberMe.php");
+
     }
 ?>
 
