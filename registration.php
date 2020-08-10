@@ -66,7 +66,8 @@
 </html>
 
 <?php
-
+    //DATABASE CONNECTION
+    $connection = mysqli_connect('127.0.0.1', 'root', '', 'mid_mini_project');
 
     if(isset($_POST["registerButton"])) {
         $id = $_POST["id"];
@@ -83,9 +84,10 @@
         }
         else {
             
-            $file = fopen("userInfo.txt",'a');
-            $user = $id."|".$password."|".$name."|".$email."|".$userType.PHP_EOL;
-            fwrite($file, $user);
+            $tableName = "userinfo";
+            $query = "INSERT INTO $tableName (id,password,name,email,usertype) VALUES ('$id','$password','$name','$email','$userType')";
+            mysqli_query($connection,$query);
+            mysqli_close($connection);
 
             header("Location: login.php");
         }

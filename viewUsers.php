@@ -17,28 +17,27 @@
             <td>USER TYPE</td>
         </tr>
         <?php
-            $file = fopen("userInfo.txt",'r');
+            session_start();
 
-            while(!feof($file)) {
-                $data = fgets($file);
-                if(empty($data)){
-                    break;
-                }
-                $user = explode('|', $data);
-                if(is_null($user)) {
-                    break;
-                }
+            //DATABASE CONNECTION
+            $connection = mysqli_connect('127.0.0.1', 'root', '', 'mid_mini_project');
+            $tableName = "userinfo";
+            $query = "SELECT * FROM $tableName";
+            $result = mysqli_query($connection, $query);
+            while ($row = mysqli_fetch_assoc($result)) {
                 echo "
-                    <tr>
-                        <td>$user[0]</td>
-                        <td>$user[2]</td>
-                        <td>$user[3]</td>
-                        <td>$user[4]</td>
-                    </tr>";
+                <tr>
+                    <td>".$row['id']."</td>
+                    <td>".$row["name"]."</td>
+                    <td>".$row["email"]."</td>
+                    <td>".$row["usertype"]."</td>
+                </tr>";
             }
+
+            $homeLink = "adminHomePage.php";
         ?>
         <tr>
-            <td colspan = "4" align="right"><a href="">Go Home</a></td>
+            <td colspan = "4" align="right"><a href=<?php echo $homeLink; ?>>Go Home</a></td>
         </tr>
 
     </table>
