@@ -56,7 +56,6 @@
         }
         else {
             if (isset($_POST["rememberMe"])) {
-                $loggedInAs = $id;
                 setcookie("loginStatus", $id, time()+3600);
             }
             $tableName = "userinfo";

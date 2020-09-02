@@ -1,5 +1,16 @@
 <?php
     session_start();
+
+    if(!isset($_SESSION["rememberMeChecked"])) {
+        $_SESSION["currentLink"] = "userHomePage.php";
+        $_SESSION["rememberMeChecked"] = true;
+        header("Location: rememberMe.php");
+
+    }
+?>
+
+
+<?php
     $id = $_SESSION["id"];
     $name = $_SESSION["name"];
     $email = $_SESSION["email"];

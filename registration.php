@@ -56,7 +56,7 @@
                 </tr>
                 <tr>
                     <td><input type="submit" value="Register" name="registerButton">
-                        <a href="">Login</a>
+                        <a href="login.php">Login</a>
                     </td>
                 </tr>
             </table>

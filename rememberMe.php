@@ -4,7 +4,7 @@
         $id = $_COOKIE["loginStatus"];
         $tableName = "userinfo";
         $query = "SELECT * FROM $tableName WHERE id='$id'";
-        
+        $connection = mysqli_connect('127.0.0.1', 'root', '', 'mid_mini_project');
         $result = mysqli_query($connection, $query);
         $row = mysqli_fetch_assoc($result);
         $_SESSION["id"] = $row["id"];

@@ -1,3 +1,18 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION["rememberMeChecked"])) {
+        $_SESSION["currentLink"] = "adminHomePage.php";
+        $_SESSION["rememberMeChecked"] = true;
+        header("Location: rememberMe.php");
+
+    }
+    if(!isset($_SESSION["name"])) {
+        header("Location: login.php");
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,14 +24,13 @@
     <center>
         <h1>WELCOME  
             <?php 
-                session_start();
                 echo $_SESSION["name"];
             ?>
         !</h1>
         <a href="profile.php">Profile</a><br>
         <a href="changePassword.php">Change Passowrd</a><br>
         <a href="viewUsers.php">View Users</a><br>
-        <a href="login.php">Logout</a><br>
+        <a href="logout.php">Logout</a><br>
     </center>
 
     

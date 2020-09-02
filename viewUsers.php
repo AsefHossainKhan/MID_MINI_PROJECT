@@ -1,3 +1,15 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION["rememberMeChecked"])) {
+        $_SESSION["currentLink"] = "userHomePage.php";
+        $_SESSION["rememberMeChecked"] = true;
+        header("Location: rememberMe.php");
+
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +29,6 @@
             <td>USER TYPE</td>
         </tr>
         <?php
-            session_start();
 
             //DATABASE CONNECTION
             $connection = mysqli_connect('127.0.0.1', 'root', '', 'mid_mini_project');

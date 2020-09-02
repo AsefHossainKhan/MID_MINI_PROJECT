@@ -7,6 +7,9 @@
         header("Location: rememberMe.php");
 
     }
+    if(!isset($_SESSION["name"])) {
+        header("Location: login.php");
+    }
 ?>
 
 
@@ -22,13 +25,12 @@
     <center>
         <h1>WELCOME
             <?php 
-                session_start();
                 echo $_SESSION["name"];
             ?>
         !</h1>
         <a href="profile.php">Profile</a><br>
         <a href="changePassword.php">Change Passowrd</a><br>
-        <a href="login.php">Logout</a><br>
+        <a href="logout.php">Logout</a><br>
     </center>
 
     
